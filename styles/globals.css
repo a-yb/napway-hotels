@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Dongle', sans-serif;
+}
+
+@font-face {
+  font-family: 'Trajan Pro Bold';
+  src: url('/static/fonts/TrajanPro-Bold.woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Trajan Pro Regular';
+  src: url('/static/fonts/TrajanPro-Regular.woff');
+  font-weight: normal;
+}
