@@ -1,5 +1,5 @@
 .chapternav {
-  @apply py-2 text-center h-28 w-full bg-gray-100;
+  @apply py-2 text-center h-28 w-full bg-gray-50;
 }
 
 .chapternav-items {

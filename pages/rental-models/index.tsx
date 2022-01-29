@@ -6,18 +6,18 @@ import type { ChapterNavItem } from '../../components/ChapterNav/index'
 const rental_models: ChapterNavItem[] = [
   {
     link: '/rental-models/napway',
-    icon: '/static/imgs/icons/tiny-house.png',
+    icon: '/static/imgs/icons/Napway.svg',
     label: 'Napway',
   },
   {
     link: '/rental-models/dormy',
-    icon: '/static/imgs/icons/tiny-house-1.png',
+    icon: '/static/imgs/icons/Dormy.svg',
     label: 'Dormy',
   },
   {
     link: '/rental-models/nature',
-    icon: '/static/imgs/icons/tiny-house-2.png',
-    label: 'Nature',
+    icon: '/static/imgs/icons/Flexy.svg',
+    label: 'Flexy',
   },
 ]
 

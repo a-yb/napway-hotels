@@ -10,12 +10,12 @@ import styles from './Navbar.module.css'
 
 function Navbar() {
   return (
-    <header className="h-[44px] w-screen bg-gray-900 text-white">
+    <header className="h-[44px] w-screen bg-[#2C363E] text-white">
       <div className="global-wrapper h-full">
         <nav className="flex items-center h-full mx-5">
           <Link href="/" passHref>
-            <h1 className="font-trajan-pro-bold text-xl cursor-pointer">
-              <span className="text-primary-400">NAPWAY</span>HOTELS
+            <h1 className="font-trajan-pro text-xl cursor-pointer">
+              <span className="text-primary-300">NAPWAY</span> HOTELS
             </h1>
           </Link>
 
