@@ -43,7 +43,7 @@ function Navbar() {
             <AiOutlineInstagram
               fill="#fff"
               size={24}
-              className="hover:scale-125"
+              className="hover:scale-125 hover:rotate-12 transition-transform duration-300"
             />
           </motion.a>
         </nav>

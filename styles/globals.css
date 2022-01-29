@@ -21,10 +21,6 @@ body {
   font-weight: normal;
 }
 
-.gallery {
-  @apply max-w-5xl;
-}
-
 .global-wrapper {
   @apply max-w-[996px] mx-auto;
 }

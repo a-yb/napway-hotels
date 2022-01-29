@@ -1,0 +1,20 @@
+.chapternav {
+  @apply py-2 text-center h-28 w-full bg-gray-100;
+}
+
+.chapternav-items {
+  @apply flex justify-center gap-16;
+}
+.chapternav-item {
+}
+
+.chapternav-icon {
+}
+
+.chapternav-link {
+  @apply hover:text-primary-600 cursor-pointer;
+}
+
+.chapternav-label {
+  @apply text-xl;
+}
