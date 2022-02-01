@@ -1,0 +1,5 @@
+.background {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('/static/imgs/hero.jpg');
+  @apply h-screen bg-no-repeat relative bg-cover bg-top;
+}

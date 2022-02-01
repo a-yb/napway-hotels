@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;900&display=swap');
 @import '~react-image-gallery/styles/css/image-gallery.css';
 
 @tailwind base;
@@ -6,7 +6,9 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Dongle', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
@@ -23,4 +25,7 @@ body {
 
 .global-wrapper {
   @apply max-w-[996px] mx-auto;
+}
+
+.hero {
 }

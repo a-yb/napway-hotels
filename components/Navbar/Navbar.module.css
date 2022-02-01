@@ -1,3 +1,25 @@
+.navbar {
+  @apply h-11 w-screen bg-secondary 
+  text-gray-300;
+}
+
+.logo {
+  @apply font-trajan-pro-bold
+  text-base md:text-lg lg:text-xl 
+  cursor-pointer 
+  tracking-wide;
+}
+
+.nav-desktop {
+  @apply flex items-center h-full mx-5;
+}
+.nav-mobile {
+  @apply flex items-center justify-between h-full mx-4;
+}
+
+.nav-items {
+  @apply flex flex-grow gap-10 justify-center;
+}
 .nav-item {
-  @apply text-[22px] font-light;
+  @apply text-sm;
 }

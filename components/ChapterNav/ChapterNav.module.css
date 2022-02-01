@@ -1,5 +1,5 @@
 .chapternav {
-  @apply py-2 text-center h-28 w-full bg-gray-50;
+  @apply text-center h-36 w-full bg-gray-50;
 }
 
 .chapternav-items {
@@ -11,10 +11,13 @@
 .chapternav-icon {
 }
 
+.chapternav-icon-wrapper {
+}
+
 .chapternav-link {
   @apply hover:text-primary-600 cursor-pointer;
 }
 
 .chapternav-label {
-  @apply text-xl;
+  @apply text-gray-600 -m-2 text-sm font-medium;
 }

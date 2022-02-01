@@ -25,8 +25,8 @@ function ChapterNav(props: ChapterNapProps) {
                 <Image
                   src={model.icon}
                   alt={model.label}
-                  height={50}
-                  width={50}
+                  height={99}
+                  width={176}
                   className={styles['chapternav-icon']}
                 />
                 <h3 className={styles['chapternav-label']}>{model.label}</h3>
