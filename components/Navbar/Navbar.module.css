@@ -5,21 +5,24 @@
 
 .logo {
   @apply font-trajan-pro-bold
-  text-base md:text-lg lg:text-xl 
+  text-sm md:text-base lg:text-lg
   cursor-pointer 
   tracking-wide;
 }
 
 .nav-desktop {
-  @apply flex items-center h-full mx-5;
+  @apply hidden md:flex items-center h-full mx-5;
 }
+
 .nav-mobile {
-  @apply flex items-center justify-between h-full mx-4;
+  @apply flex items-center justify-between h-full mx-4 md:hidden;
 }
 
 .nav-items {
-  @apply flex flex-grow gap-10 justify-center;
+  @apply flex flex-grow justify-center
+  gap-5 md:gap-7 lg:gap-10;
 }
+
 .nav-item {
-  @apply text-sm;
+  @apply text-xs md:text-sm;
 }

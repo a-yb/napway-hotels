@@ -1,5 +1,9 @@
 .background {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)),
     url('/static/imgs/hero.jpg');
-  @apply h-screen bg-no-repeat relative bg-cover bg-top;
+  @apply h-80 md:h-96 lg:h-screen w-screen bg-no-repeat relative bg-cover bg-center;
+}
+
+.hero-text {
+  @apply text-xl md:text-4xl;
 }

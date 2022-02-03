@@ -15,7 +15,7 @@ const rental_models: ChapterNavItem[] = [
     label: 'Dormy',
   },
   {
-    link: '/rental-models/nature',
+    link: '/rental-models/flexy',
     icon: '/static/imgs/icons/Flexy.svg',
     label: 'Flexy',
   },

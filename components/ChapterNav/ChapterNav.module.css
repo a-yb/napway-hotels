@@ -1,9 +1,9 @@
 .chapternav {
-  @apply text-center h-36 w-full bg-gray-50;
+  @apply text-center h-28 w-full bg-gray-50;
 }
 
 .chapternav-items {
-  @apply flex justify-center gap-16;
+  @apply flex justify-center gap-16 m-2;
 }
 .chapternav-item {
 }
@@ -19,5 +19,5 @@
 }
 
 .chapternav-label {
-  @apply text-gray-600 -m-2 text-sm font-medium;
+  @apply text-gray-600 -m-2 text-xs font-medium;
 }

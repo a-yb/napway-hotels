@@ -6,10 +6,9 @@ import { motion } from 'framer-motion'
 import { AiOutlineInstagram } from 'react-icons/ai'
 
 import styles from './Navbar.module.css'
+import HamburgerMenu from '../HamburgerMenu'
 
 function Navbar() {
-  const [MenuIsActive, setMenuIsActive] = useState(false)
-
   return (
     <header className={styles['navbar']}>
       <div className="global-wrapper h-full">
@@ -48,7 +47,7 @@ function Navbar() {
             />
           </motion.a>
         </nav>
-        {/* <nav className={styles['nav-mobile']}>
+        <nav className={styles['nav-mobile']}>
           <div className="nav-mobile-icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +82,7 @@ function Navbar() {
               className="hover:scale-125 hover:rotate-12 transition-transform duration-300"
             />
           </motion.a>
-        </nav> */}
+        </nav>
       </div>
     </header>
   )

@@ -9,4 +9,5 @@
 }
 
 .menu-item {
+  @apply text-white;
 }
