@@ -7,3 +7,7 @@
 .hero-text {
   @apply text-xl md:text-4xl;
 }
+
+.hero-text__char {
+  @apply inline-block;
+}

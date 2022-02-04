@@ -1,9 +1,12 @@
 .chapternav {
-  @apply text-center h-28 w-full bg-gray-50;
+  @apply text-center 
+  h-28 w-full
+  bg-gray-100;
 }
 
 .chapternav-items {
-  @apply flex justify-center gap-16 m-2;
+  @apply h-full flex justify-center items-center
+  gap-8 md:gap-10 lg:gap-y-12;
 }
 .chapternav-item {
 }
@@ -11,13 +14,11 @@
 .chapternav-icon {
 }
 
-.chapternav-icon-wrapper {
-}
-
 .chapternav-link {
-  @apply hover:text-primary-600 cursor-pointer;
+  @apply flex flex-col justify-center items-center 
+  hover:text-red-600 cursor-pointer;
 }
 
 .chapternav-label {
-  @apply text-gray-600 -m-2 text-xs font-medium;
+  @apply text-gray-600 m-1 text-xs font-medium;
 }

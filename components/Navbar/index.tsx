@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
-
+import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 
 import { AiOutlineInstagram } from 'react-icons/ai'
@@ -9,6 +8,7 @@ import styles from './Navbar.module.css'
 import HamburgerMenu from '../HamburgerMenu'
 
 function Navbar() {
+  const router = useRouter()
   return (
     <header className={styles['navbar']}>
       <div className="global-wrapper h-full">
@@ -21,13 +21,13 @@ function Navbar() {
 
           <ul className={styles['nav-items']}>
             <li className={styles['nav-item']}>
-              <Link href={'/rental-models'}>Rental Models</Link>
+              <Link href={'/rental-models'}>Rent</Link>
             </li>
             <li className={styles['nav-item']}>
-              <Link href={'/models-for-sale'}>Models For Sale</Link>
+              <Link href={'/models-for-sale'}>Buy</Link>
             </li>
             <li className={styles['nav-item']}>
-              <Link href={'/about'}>About Us</Link>
+              <Link href={'/about'}>About</Link>
             </li>
             <li className={styles['nav-item']}>
               <Link href={'/contact'}>Contact</Link>
