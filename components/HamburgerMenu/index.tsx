@@ -7,10 +7,25 @@ import { HamburgeMenuContext } from '../../context/HamburgerMenuContext'
 
 import { HiX } from 'react-icons/hi'
 
+const variants = {
+  open: {
+    height: '100%',
+  },
+  collapsed: { height: `-100%` },
+}
+
 function HamburgerMenu() {
   const { isActive, toggleMenu } = useContext(HamburgeMenuContext)!
   return (
     <motion.div
+      variants={variants}
+      inherit={false}
+      initial={isActive ? 'open' : 'collapsed'}
+      animate={isActive ? 'open' : 'collapsed'}
+      transition={{
+        ease: 'easeInOut',
+        duration: 0.5,
+      }}
       className={styles['hamburger-menu'] + ' ' + (isActive ? '' : 'hidden')}
     >
       <nav className={styles['menu']}>
@@ -20,7 +35,7 @@ function HamburgerMenu() {
             toggleMenu()
           }}
         >
-          <HiX className={styles['menu-close-btn__icon']} size={32} />
+          <HiX className={styles['menu-close-btn__icon']} size={24} />
         </button>
         <ul className={styles['menu-items']}>
           <li className={styles['menu-item']}>

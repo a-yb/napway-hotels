@@ -2,7 +2,7 @@ import { createContext, FC, useState } from 'react'
 import { HamburgerMenuContextState } from '../types/HamburgerContextState'
 
 const contextDefaultValues: HamburgerMenuContextState = {
-  isActive: true,
+  isActive: false,
   toggleMenu: () => {},
 }
 
