@@ -11,7 +11,7 @@ const variants = {
   open: {
     height: '100%',
   },
-  collapsed: { height: `-100%` },
+  collapsed: { height: 0 },
 }
 
 function HamburgerMenu() {
@@ -23,8 +23,8 @@ function HamburgerMenu() {
       initial={isActive ? 'open' : 'collapsed'}
       animate={isActive ? 'open' : 'collapsed'}
       transition={{
-        ease: 'easeInOut',
-        duration: 0.5,
+        ease: 'linear',
+        duration: 0.45,
       }}
       className={styles['hamburger-menu'] + ' ' + (isActive ? '' : 'hidden')}
     >
