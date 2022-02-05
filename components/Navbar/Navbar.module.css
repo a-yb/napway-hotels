@@ -15,7 +15,8 @@
 }
 
 .nav-mobile {
-  @apply flex items-center justify-between h-full mx-4 md:hidden;
+  @apply flex items-center justify-between 
+  h-full mx-4 md:hidden;
 }
 
 .nav-items {
@@ -25,6 +26,6 @@
 
 .nav-item {
   @apply text-xs md:text-sm
-  hover:text-gray-50 hover:underline underline-offset-2
+  hover:text-gray-50 hover:underline underline-offset-4
   transition-all duration-150;
 }

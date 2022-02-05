@@ -1,13 +1,28 @@
 .hamburger-menu {
-  @apply absolute h-screen z-50 bg-black;
+  @apply absolute 
+  w-full
+  h-screen 
+  z-50
+  bg-black;
 }
 
 .menu {
+  @apply h-full relative;
 }
 
 .menu-items {
+  @apply h-full 
+  flex flex-col justify-center items-center gap-5;
 }
 
 .menu-item {
   @apply text-white;
+}
+
+.menu-close-btn {
+  @apply absolute top-4 left-4;
+}
+
+.menu-close-btn__icon {
+  @apply fill-white;
 }

@@ -1,12 +1,27 @@
-import React from 'react'
+import { motion } from 'framer-motion'
+import React, { useContext } from 'react'
 import Link from 'next/link'
 
 import styles from './HamburgerMenu.module.css'
+import { HamburgeMenuContext } from '../../context/HamburgerMenuContext'
+
+import { HiX } from 'react-icons/hi'
 
 function HamburgerMenu() {
+  const { isActive, toggleMenu } = useContext(HamburgeMenuContext)!
   return (
-    <div className={styles['hamburger-menu']}>
+    <motion.div
+      className={styles['hamburger-menu'] + ' ' + (isActive ? '' : 'hidden')}
+    >
       <nav className={styles['menu']}>
+        <button
+          className={styles['menu-close-btn']}
+          onClick={() => {
+            toggleMenu()
+          }}
+        >
+          <HiX className={styles['menu-close-btn__icon']} size={32} />
+        </button>
         <ul className={styles['menu-items']}>
           <li className={styles['menu-item']}>
             <Link href={'/rental-models'}>Rental Models</Link>
@@ -22,7 +37,7 @@ function HamburgerMenu() {
           </li>
         </ul>
       </nav>
-    </div>
+    </motion.div>
   )
 }
 

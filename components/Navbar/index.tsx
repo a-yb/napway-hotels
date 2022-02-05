@@ -1,14 +1,19 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
+import React, { useContext } from 'react'
+
+import { HamburgeMenuContext } from '../../context/HamburgerMenuContext'
 
 import { AiOutlineInstagram } from 'react-icons/ai'
 
+import { HiMenu } from 'react-icons/hi'
+
 import styles from './Navbar.module.css'
-import HamburgerMenu from '../HamburgerMenu'
 
 function Navbar() {
   const router = useRouter()
+  const { isActive, toggleMenu } = useContext(HamburgeMenuContext)!
   return (
     <header className={styles['navbar']}>
       <div className="global-wrapper h-full">
@@ -20,16 +25,40 @@ function Navbar() {
           </Link>
 
           <ul className={styles['nav-items']}>
-            <li className={styles['nav-item']}>
+            <li
+              className={
+                styles['nav-item'] +
+                ' ' +
+                (router.pathname === '/rental-models' ? 'underline' : '')
+              }
+            >
               <Link href={'/rental-models'}>Rent</Link>
             </li>
-            <li className={styles['nav-item']}>
+            <li
+              className={
+                styles['nav-item'] +
+                ' ' +
+                (router.pathname === '/models-for-sale' ? 'underline' : '')
+              }
+            >
               <Link href={'/models-for-sale'}>Buy</Link>
             </li>
-            <li className={styles['nav-item']}>
-              <Link href={'/about'}>About</Link>
+            <li
+              className={
+                styles['nav-item'] +
+                ' ' +
+                (router.pathname === '/about' ? 'underline' : '')
+              }
+            >
+              <Link href={'/about'}>About Us</Link>
             </li>
-            <li className={styles['nav-item']}>
+            <li
+              className={
+                styles['nav-item'] +
+                ' ' +
+                (router.pathname === '/contact' ? 'underline' : '')
+              }
+            >
               <Link href={'/contact'}>Contact</Link>
             </li>
           </ul>
@@ -49,20 +78,9 @@ function Navbar() {
         </nav>
         <nav className={styles['nav-mobile']}>
           <div className="nav-mobile-icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 8h16M4 16h16"
-              />
-            </svg>
+            <button onClick={() => toggleMenu()}>
+              <HiMenu size={24} />
+            </button>
           </div>
           <Link href="/" passHref>
             <h1 className={styles['logo']}>
