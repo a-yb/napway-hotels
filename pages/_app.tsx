@@ -1,24 +1,24 @@
 import type { AppProps } from 'next/app'
-import type { Provider } from 'react'
 
 import Footer from '../components/Footer'
 import Layout from '../components/Layout'
+import MobileNavbar from '../components/MobileNav'
 import Navbar from '../components/Navbar'
-import HamburgerMenu from '../components/HamburgerMenu'
+import MobileNavProvider from '../context/MobileNavContext'
 
 // GLOBAL CSS
 import '../styles/globals.css'
 
 // UTILS
 import Compose from '../utils/Compose'
+
 // PROVIDERS
-import { HamburgerMenuProvider } from '../context/HamburgerMenuContext'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
-      <Compose components={[HamburgerMenuProvider]}>
-        <HamburgerMenu />
+      <Compose components={[MobileNavProvider]}>
+        <MobileNavbar />
         <Navbar />
         <Component {...pageProps} />
         <Footer />

@@ -3,17 +3,17 @@ import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import React, { useContext } from 'react'
 
-import { HamburgeMenuContext } from '../../context/HamburgerMenuContext'
-
 import { AiOutlineInstagram } from 'react-icons/ai'
 
 import { HiMenu } from 'react-icons/hi'
 
 import styles from './Navbar.module.css'
+import { MobileNavContext } from '../../context/MobileNavContext'
 
 function Navbar() {
   const router = useRouter()
-  const { isActive, toggleMenu } = useContext(HamburgeMenuContext)!
+  const { toggleMenu } = useContext(MobileNavContext)
+
   return (
     <header className={styles['navbar']}>
       <div className="global-wrapper h-full">
@@ -32,7 +32,9 @@ function Navbar() {
                 (router.pathname === '/rental-models' ? 'underline' : '')
               }
             >
-              <Link href={'/rental-models'}>Rent</Link>
+              <Link href={'/rental-models'}>
+                <a>Rent</a>
+              </Link>
             </li>
             <li
               className={
@@ -41,7 +43,9 @@ function Navbar() {
                 (router.pathname === '/models-for-sale' ? 'underline' : '')
               }
             >
-              <Link href={'/models-for-sale'}>Buy</Link>
+              <Link href={'/models-for-sale'}>
+                <a>Buy</a>
+              </Link>
             </li>
             <li
               className={
@@ -50,7 +54,9 @@ function Navbar() {
                 (router.pathname === '/about' ? 'underline' : '')
               }
             >
-              <Link href={'/about'}>About Us</Link>
+              <Link href={'/about'}>
+                <a>About Us</a>
+              </Link>
             </li>
             <li
               className={
@@ -59,7 +65,9 @@ function Navbar() {
                 (router.pathname === '/contact' ? 'underline' : '')
               }
             >
-              <Link href={'/contact'}>Contact</Link>
+              <Link href={'/contact'}>
+                <a>Contact</a>
+              </Link>
             </li>
           </ul>
           <motion.a
@@ -78,7 +86,7 @@ function Navbar() {
         </nav>
         <nav className={styles['nav-mobile']}>
           <div className="nav-mobile-icon">
-            <button onClick={() => toggleMenu()}>
+            <button onClick={toggleMenu}>
               <HiMenu size={24} />
             </button>
           </div>

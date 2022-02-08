@@ -1,0 +1,17 @@
+.mobileNav {
+  @apply bg-black w-full h-screen z-50 absolute;
+}
+
+.mobileNavItems {
+  @apply w-full h-full
+  flex flex-col justify-center items-center gap-5;
+}
+
+.mobileNavItem {
+  @apply text-white;
+}
+
+.mobileNavCloseBtn {
+  @apply absolute top-0 left-0 z-[55]
+  cursor-pointer fill-white m-3;
+}

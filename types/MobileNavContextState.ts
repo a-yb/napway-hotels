@@ -1,4 +1,4 @@
-export type HamburgerMenuContextState = {
+export type MobileNavContextState = {
   isActive: boolean
   toggleMenu: () => void
 }

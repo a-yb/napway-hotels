@@ -11,8 +11,8 @@ export default function Hero() {
       <motion.p
         className={styles['hero-text__char']}
         key={idx}
-        animate={{ y: [-700, 0] }}
-        transition={{ duration: 0.1, delay: 0.1 * idx }}
+        animate={{ y: [-500, -400, -300, -200, -50, 0] }}
+        transition={{ duration: 0.055, delay: 0.075 * idx, ease: 'easeIn' }}
       >
         {val === ' ' ? <>&nbsp;</> : val}
       </motion.p>
