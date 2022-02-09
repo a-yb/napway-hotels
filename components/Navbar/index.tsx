@@ -29,7 +29,7 @@ function Navbar() {
               className={
                 styles['nav-item'] +
                 ' ' +
-                (router.pathname === '/rental-models' ? 'underline' : '')
+                (router.pathname === '/rental-models' ? 'font-semibold' : '')
               }
             >
               <Link href={'/rental-models'}>
@@ -40,7 +40,7 @@ function Navbar() {
               className={
                 styles['nav-item'] +
                 ' ' +
-                (router.pathname === '/models-for-sale' ? 'underline' : '')
+                (router.pathname === '/models-for-sale' ? 'font-semibold' : '')
               }
             >
               <Link href={'/models-for-sale'}>
@@ -51,7 +51,7 @@ function Navbar() {
               className={
                 styles['nav-item'] +
                 ' ' +
-                (router.pathname === '/about' ? 'underline' : '')
+                (router.pathname === '/about' ? 'font-semibold' : '')
               }
             >
               <Link href={'/about'}>
@@ -62,7 +62,7 @@ function Navbar() {
               className={
                 styles['nav-item'] +
                 ' ' +
-                (router.pathname === '/contact' ? 'underline' : '')
+                (router.pathname === '/contact' ? 'font-semibold' : '')
               }
             >
               <Link href={'/contact'}>
