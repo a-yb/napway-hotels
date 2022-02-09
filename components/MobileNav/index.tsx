@@ -1,10 +1,11 @@
 import Link from 'next/link'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { HiX } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 
-import styles from './MobileNav.module.css'
 import { MobileNavContext } from '../../context/MobileNavContext'
+
+import styles from './MobileNav.module.css'
 
 function MobileNav() {
   const { isActive, toggleMenu } = useContext(MobileNavContext)

@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
+import { motion } from 'framer-motion'
+
 import styles from './ChapterNav.module.css'
 
 export type ChapterNavItem = {
@@ -17,8 +19,12 @@ interface ChapterNapProps {
 function ChapterNav(props: ChapterNapProps) {
   return (
     <nav className={styles['chapternav']}>
-      <ul className={styles['chapternav-items']}>
-        {props.models.map((model) => (
+      <motion.ul
+        animate={{ x: [200, 0] }}
+        transition={{ duration: 0.35, ease: 'easeOut' }}
+        className={styles['chapternav-items']}
+      >
+        {props.models.map((model, i) => (
           <li className={styles['chapternav-item']} key={model.label}>
             <Link href={model.link} passHref>
               <div className={styles['chapternav-link']}>
@@ -34,7 +40,7 @@ function ChapterNav(props: ChapterNapProps) {
             </Link>
           </li>
         ))}
-      </ul>
+      </motion.ul>
     </nav>
   )
 }
