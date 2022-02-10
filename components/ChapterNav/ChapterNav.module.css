@@ -1,24 +1,24 @@
 .chapternav {
   @apply text-center 
   h-28 w-full
-  bg-gray-100;
+  bg-gray-50;
 }
 
-.chapternav-items {
+.chapternav_items {
   @apply h-full flex justify-center items-center
   gap-8 md:gap-10 lg:gap-y-12;
 }
-.chapternav-item {
+
+.chapternav_item {
 }
 
-.chapternav-icon {
+.chapternav_icon {
 }
 
 .chapternav-link {
-  @apply flex flex-col justify-center items-center 
-  hover:text-red-600 cursor-pointer;
+  @apply flex flex-col justify-center items-center cursor-pointer;
 }
 
-.chapternav-label {
+.chapternav_label {
   @apply text-gray-600 m-1 text-xs font-medium;
 }

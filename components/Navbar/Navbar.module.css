@@ -18,10 +18,17 @@
 }
 
 .nav_items {
-  @apply md:flex gap-4 hidden;
+  @apply md:flex gap-8 hidden;
 }
 
 .nav_item {
+}
+
+.nav_item__link {
+}
+
+.nav_item__link.active {
+  @apply font-semibold text-white;
 }
 
 .toggle_button {

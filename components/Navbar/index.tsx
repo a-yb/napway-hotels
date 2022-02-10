@@ -7,6 +7,7 @@ import { AiOutlineInstagram, AiOutlineClose } from 'react-icons/ai'
 import { BiMenuAltRight } from 'react-icons/bi'
 
 import styles from './Navbar.module.css'
+import { useRouter } from 'next/router'
 
 type NumberOrUndefined = number | undefined
 
@@ -16,6 +17,7 @@ type widthAndHeight = {
 }
 
 function Navbar() {
+  const router = useRouter()
   let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
@@ -72,24 +74,40 @@ function Navbar() {
                   <div className={styles.close_button} onClick={closeModal}>
                     <AiOutlineClose size={24} />
                   </div>
-                  <ul>
-                    <li>
-                      <a href={'/rental-models'} onClick={closeModal}>
+                  <ul className={styles.mobile_nav_items}>
+                    <li className={styles.mobile_nav_item}>
+                      <a
+                        className={styles.mobile_nav_item__link}
+                        href={'/rental-models'}
+                        onClick={closeModal}
+                      >
                         Rent
                       </a>
                     </li>
-                    <li>
-                      <a href={'/models-for-sale'} onClick={closeModal}>
+                    <li className={styles.mobile_nav_item}>
+                      <a
+                        className={styles.mobile_nav_item__link}
+                        href={'/models-for-sale'}
+                        onClick={closeModal}
+                      >
                         Buy
                       </a>
                     </li>
-                    <li>
-                      <a href={'/about'} onClick={closeModal}>
+                    <li className={styles.mobile_nav_item}>
+                      <a
+                        className={styles.mobile_nav_item__link}
+                        href={'/about'}
+                        onClick={closeModal}
+                      >
                         About Us
                       </a>
                     </li>
-                    <li>
-                      <a href={'/contact'} onClick={closeModal}>
+                    <li className={styles.mobile_nav_item}>
+                      <a
+                        className={styles.mobile_nav_item__link}
+                        href={'/contact'}
+                        onClick={closeModal}
+                      >
                         Contact
                       </a>
                     </li>
@@ -114,22 +132,42 @@ function Navbar() {
 
             <ul className={styles.nav_items}>
               <li className={styles.nav_item}>
-                <a href={'/rental-models'} onClick={closeModal}>
+                <a
+                  className={`${styles.nav_item__link} ${
+                    router.pathname === '/rental-models' ? styles.active : ''
+                  }`}
+                  href={'/rental-models'}
+                >
                   Rent
                 </a>
               </li>
               <li className={styles.nav_item}>
-                <a href={'/models-for-sale'} onClick={closeModal}>
+                <a
+                  className={`${styles.nav_item__link} ${
+                    router.pathname === '/models-for-sale' ? styles.active : ''
+                  }`}
+                  href={'/models-for-sale'}
+                >
                   Buy
                 </a>
               </li>
               <li className={styles.nav_item}>
-                <a href={'/about'} onClick={closeModal}>
+                <a
+                  className={`${styles.nav_item__link} ${
+                    router.pathname === '/about' ? styles.active : ''
+                  }`}
+                  href={'/about'}
+                >
                   About Us
                 </a>
               </li>
               <li className={styles.nav_item}>
-                <a href={'/contact'} onClick={closeModal}>
+                <a
+                  className={`${styles.nav_item__link} ${
+                    router.pathname === '/contact' ? styles.active : ''
+                  }`}
+                  href={'/contact'}
+                >
                   Contact
                 </a>
               </li>
