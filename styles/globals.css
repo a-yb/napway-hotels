@@ -27,6 +27,3 @@ body {
 .global-wrapper {
   @apply max-w-[996px] mx-auto;
 }
-
-.hero {
-}

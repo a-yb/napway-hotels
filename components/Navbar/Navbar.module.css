@@ -1,6 +1,7 @@
-.navbar {
-  @apply h-11 w-screen bg-secondary 
-  text-gray-300;
+.header {
+  @apply w-full bg-secondary h-11
+  text-gray-300
+  transition-all duration-300 ease-linear;
 }
 
 .logo {
@@ -10,26 +11,33 @@
   tracking-wide;
 }
 
-.nav-desktop {
-  @apply hidden md:flex items-center h-full mx-5;
+.nav {
+  @apply h-full w-full
+  px-3
+  flex justify-between items-center;
 }
 
-.nav-mobile {
-  @apply flex items-center justify-between 
-  h-full mx-4 md:hidden;
+.nav_items {
+  @apply md:flex gap-4 hidden;
 }
 
-.nav-items {
-  @apply flex flex-grow justify-center
-  gap-5 md:gap-7 lg:gap-10;
+.nav_item {
 }
 
-.nav-item {
-  @apply text-xs md:text-sm
-  hover:text-gray-50 hover:underline underline-offset-4
-  transition-all duration-150;
+.toggle_button {
+  @apply cursor-pointer md:hidden;
 }
 
-.active {
-  @apply font-semibold text-white;
+.mobile_nav {
+  @apply relative h-full flex items-center flex-col justify-center;
+}
+
+.mobile_nav_items {
+}
+
+.mobile_nav_item {
+}
+
+.close_button {
+  @apply absolute top-0 left-0 m-3;
 }

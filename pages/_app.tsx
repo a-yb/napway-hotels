@@ -2,9 +2,7 @@ import type { AppProps } from 'next/app'
 
 import Footer from '../components/Footer'
 import Layout from '../components/Layout'
-import MobileNavbar from '../components/MobileNav'
 import Navbar from '../components/Navbar'
-import MobileNavProvider from '../context/MobileNavContext'
 
 // GLOBAL CSS
 import '../styles/globals.css'
@@ -17,8 +15,7 @@ import Compose from '../utils/Compose'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
-      <Compose components={[MobileNavProvider]}>
-        <MobileNavbar />
+      <Compose components={[]}>
         <Navbar />
         <Component {...pageProps} />
         <Footer />

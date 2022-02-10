@@ -1,116 +1,156 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
-import React, { useContext } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
+import { Dialog, Transition } from '@headlessui/react'
 
-import { AiOutlineInstagram } from 'react-icons/ai'
-
-import { HiMenu } from 'react-icons/hi'
+import { AiOutlineInstagram, AiOutlineClose } from 'react-icons/ai'
+import { BiMenuAltRight } from 'react-icons/bi'
 
 import styles from './Navbar.module.css'
-import { MobileNavContext } from '../../context/MobileNavContext'
+
+type NumberOrUndefined = number | undefined
+
+type widthAndHeight = {
+  width: NumberOrUndefined
+  height: NumberOrUndefined
+}
 
 function Navbar() {
-  const router = useRouter()
-  const { toggleMenu } = useContext(MobileNavContext)
+  let [isOpen, setIsOpen] = useState(false)
+
+  function closeModal() {
+    setIsOpen(false)
+  }
+
+  function openModal() {
+    setIsOpen(true)
+  }
+
+  const [size, setSize] = useState<widthAndHeight>({
+    width: undefined,
+    height: undefined,
+  })
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+    }
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  useEffect(() => {
+    if (size.width! > 768 && isOpen) {
+      setIsOpen(false)
+    }
+  }, [size.width, isOpen])
 
   return (
-    <header className={styles['navbar']}>
-      <div className="global-wrapper h-full">
-        <nav className={styles['nav-desktop']}>
-          <Link href="/" passHref>
-            <h1 className={styles['logo']}>
-              <span className="text-primary-300">NAPWAY</span> HOTELS
-            </h1>
-          </Link>
-
-          <ul className={styles['nav-items']}>
-            <li
-              className={
-                styles['nav-item'] +
-                ' ' +
-                (router.pathname === '/rental-models' ? styles.active : '')
-              }
+    <>
+      <Transition appear show={isOpen} as={Fragment}>
+        <Dialog
+          as="div"
+          className="fixed inset-0 z-10 overflow-y-auto "
+          onClose={closeModal}
+        >
+          <div className="min-h-screen">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
             >
-              <Link href={'/rental-models'}>
-                <a>Rent</a>
-              </Link>
-            </li>
-            <li
-              className={
-                styles['nav-item'] +
-                ' ' +
-                (router.pathname === '/models-for-sale' ? styles.active : '')
-              }
-            >
-              <Link href={'/models-for-sale'}>
-                <a>Buy</a>
-              </Link>
-            </li>
-            <li
-              className={
-                styles['nav-item'] +
-                ' ' +
-                (router.pathname === '/about' ? styles.active : '')
-              }
-            >
-              <Link href={'/about'}>
-                <a>About Us</a>
-              </Link>
-            </li>
-            <li
-              className={
-                styles['nav-item'] +
-                ' ' +
-                (router.pathname === '/contact' ? styles.active : '')
-              }
-            >
-              <Link href={'/contact'}>
-                <a>Contact</a>
-              </Link>
-            </li>
-          </ul>
-          <motion.a
-            animate={{ scale: [1.75, 1.25, 1.75, 1], rotate: '360deg' }}
-            transition={{ duration: 2 }}
-            href="https://www.instagram.com/napwayofficial"
-            target={'_blank'}
-            rel="noreferrer"
-          >
-            <AiOutlineInstagram
-              fill="#fff"
-              size={24}
-              className="hover:scale-125 hover:rotate-12 transition-transform duration-300"
-            />
-          </motion.a>
-        </nav>
-        <nav className={styles['nav-mobile']}>
-          <div className="nav-mobile-icon">
-            <button onClick={toggleMenu}>
-              <HiMenu size={24} />
-            </button>
+              <div className="h-screen overflow-hidden transition-all transform bg-black text-white">
+                <nav className={styles.mobile_nav}>
+                  <div className={styles.close_button} onClick={closeModal}>
+                    <AiOutlineClose size={24} />
+                  </div>
+                  <ul>
+                    <li>
+                      <a href={'/rental-models'} onClick={closeModal}>
+                        Rent
+                      </a>
+                    </li>
+                    <li>
+                      <a href={'/models-for-sale'} onClick={closeModal}>
+                        Buy
+                      </a>
+                    </li>
+                    <li>
+                      <a href={'/about'} onClick={closeModal}>
+                        About Us
+                      </a>
+                    </li>
+                    <li>
+                      <a href={'/contact'} onClick={closeModal}>
+                        Contact
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </Transition.Child>
           </div>
-          <Link href="/" passHref>
-            <h1 className={styles['logo']}>
-              <span className="text-primary-300">NAPWAY</span> HOTELS
-            </h1>
-          </Link>
-          <motion.a
-            animate={{ scale: [1.75, 1.25, 1.75, 1], rotate: '360deg' }}
-            transition={{ duration: 2 }}
-            href="https://www.instagram.com/napwayofficial"
-            target={'_blank'}
-            rel="noreferrer"
-          >
-            <AiOutlineInstagram
-              fill="#fff"
-              size={24}
-              className="hover:scale-125 hover:rotate-12 transition-transform duration-300"
-            />
-          </motion.a>
-        </nav>
-      </div>
-    </header>
+        </Dialog>
+      </Transition>
+      <header className={styles.header}>
+        <div className={`global-wrapper h-full`}>
+          <nav className={styles.nav}>
+            <div className={styles.toggle_button} onClick={openModal}>
+              <BiMenuAltRight size={24} />
+            </div>
+            <Link href="/" passHref>
+              <h1 className={styles.logo}>
+                <span className="text-primary-300">NAPWAY</span> HOTELS
+              </h1>
+            </Link>
+
+            <ul className={styles.nav_items}>
+              <li className={styles.nav_item}>
+                <a href={'/rental-models'} onClick={closeModal}>
+                  Rent
+                </a>
+              </li>
+              <li className={styles.nav_item}>
+                <a href={'/models-for-sale'} onClick={closeModal}>
+                  Buy
+                </a>
+              </li>
+              <li className={styles.nav_item}>
+                <a href={'/about'} onClick={closeModal}>
+                  About Us
+                </a>
+              </li>
+              <li className={styles.nav_item}>
+                <a href={'/contact'} onClick={closeModal}>
+                  Contact
+                </a>
+              </li>
+            </ul>
+            <motion.a
+              animate={{ scale: [1.75, 1.25, 1.75, 1], rotate: '360deg' }}
+              transition={{ duration: 2 }}
+              href="https://www.instagram.com/napwayofficial"
+              target={'_blank'}
+              rel="noreferrer"
+            >
+              <AiOutlineInstagram
+                fill="#fff"
+                size={24}
+                className="hover:scale-125 hover:rotate-12 transition-transform duration-300"
+              />
+            </motion.a>
+          </nav>
+        </div>
+      </header>
+    </>
   )
 }
 

@@ -22,6 +22,7 @@ module.exports = {
           100: 'rgb(204, 244, 164)',
         },
         secondary: '#2C363E',
+        dark: 'rgba(29, 29, 29, 0.9)',
       },
     },
   },
