@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import Footer from '../components/Footer'
 import Layout from '../components/Layout'
 import Navbar from '../components/Navbar'
+import { LanguageProvider } from '../context/Language'
 
 // GLOBAL CSS
 import '../styles/globals.css'
@@ -15,7 +16,7 @@ import Compose from '../utils/Compose'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
-      <Compose components={[]}>
+      <Compose components={[LanguageProvider]}>
         <Navbar />
         <Component {...pageProps} />
         <Footer />

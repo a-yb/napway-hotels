@@ -27,3 +27,11 @@ body {
 .global-wrapper {
   @apply max-w-[996px] mx-auto;
 }
+
+.__react_component_tooltip {
+  border-radius: 5px !important;
+  border: 1px solid #273552 !important;
+  padding: 10px 15px !important;
+  color: #fff !important;
+  z-index: 100 !important;
+}
