@@ -1,7 +1,7 @@
 import React from 'react'
 import ChapterNav from '../../components/ChapterNav'
 
-import type { ChapterNavItem } from '../../components/ChapterNav/index'
+import { ChapterNavItem } from '../../types'
 
 const models_for_sale: ChapterNavItem[] = [
   {
