@@ -4,11 +4,7 @@ import React from 'react'
 
 import styles from './ChapterNav.module.css'
 
-export type ChapterNavItem = {
-  link: string
-  icon: string
-  label: string
-}
+import { ChapterNavItem } from '../../types'
 
 interface ChapterNapProps {
   models: ChapterNavItem[]

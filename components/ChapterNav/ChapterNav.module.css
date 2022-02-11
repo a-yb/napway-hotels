@@ -15,8 +15,9 @@
 .chapternav_icon {
 }
 
-.chapternav-link {
-  @apply flex flex-col justify-center items-center cursor-pointer;
+.chapternav_link {
+  @apply flex flex-col justify-center items-center 
+  cursor-pointer hover:bg-gray-100 rounded-lg;
 }
 
 .chapternav_label {

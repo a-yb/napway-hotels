@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import ChapterNav from '../../components/ChapterNav'
 
-import type { ChapterNavItem } from '../../components/ChapterNav/index'
+import type { ChapterNavItem } from '../../types'
 
 const rental_models: ChapterNavItem[] = [
   {
@@ -25,7 +25,7 @@ const RentalModels: NextPage = () => {
   return (
     <div>
       <ChapterNav models={rental_models} />
-      RENTAL MODELS PAGE
+      
     </div>
   )
 }

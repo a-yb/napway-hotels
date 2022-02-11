@@ -25,6 +25,7 @@
 }
 
 .nav_item__link {
+  @apply hover:underline underline-offset-4 text-sm;
 }
 
 .nav_item__link.active {
@@ -40,9 +41,14 @@
 }
 
 .mobile_nav_items {
+  @apply text-center;
 }
 
 .mobile_nav_item {
+  @apply p-3;
+}
+.mobile_nav_item__link {
+  @apply focus:outline-none text-lg;
 }
 
 .close_button {
