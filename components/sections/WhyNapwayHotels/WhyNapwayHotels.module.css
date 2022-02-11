@@ -1,0 +1,11 @@
+.why_napwayhotels {
+  @apply mt-10;
+}
+
+.why_napwayhotels__heading {
+  @apply text-2xl font-semibold text-center;
+}
+
+.why_napwayhotels__text {
+  @apply font-medium;
+}

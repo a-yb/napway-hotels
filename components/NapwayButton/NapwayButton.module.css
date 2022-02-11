@@ -1,0 +1,8 @@
+.btn {
+  @apply m-3 px-4 py-2 text-secondary font-semibold
+  bg-primary-400 shadow-lg shadow-primary-400/50
+  rounded-md 
+  hover:scale-105 active:scale-95 active:shadow-primary-400/25
+  transition-all duration-100 ease-linear 
+  disabled:text-gray-600 disabled:bg-primary-100;
+}

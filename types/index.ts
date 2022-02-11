@@ -3,3 +3,4 @@ export type ChapterNavItem = {
   icon: string
   label: string
 }
+

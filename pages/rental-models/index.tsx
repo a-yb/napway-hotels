@@ -1,5 +1,8 @@
 import type { NextPage } from 'next'
+import ReactTooltip from 'react-tooltip'
+
 import ChapterNav from '../../components/ChapterNav'
+import NapwayButton from '../../components/NapwayButton'
 
 import type { ChapterNavItem } from '../../types'
 
@@ -24,8 +27,11 @@ const rental_models: ChapterNavItem[] = [
 const RentalModels: NextPage = () => {
   return (
     <div>
-      <ChapterNav models={rental_models} />
       
+      <ChapterNav models={rental_models} />
+      <div className="w-full flex justify-center">
+        <NapwayButton text="Rent Now" disabled={true} />
+      </div>
     </div>
   )
 }
