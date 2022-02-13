@@ -27,10 +27,11 @@ const rental_models: ChapterNavItem[] = [
 const RentalModels: NextPage = () => {
   return (
     <div>
-      
       <ChapterNav models={rental_models} />
       <div className="w-full flex justify-center">
-        <NapwayButton text="Rent Now" disabled={true} />
+        <NapwayButton disabled={true}>
+          <h1>Rent Now</h1>
+        </NapwayButton>
       </div>
     </div>
   )

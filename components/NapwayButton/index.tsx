@@ -5,7 +5,6 @@ import ReactTooltip from 'react-tooltip'
 interface Props {
   children: React.ReactNode
   disabled: boolean
-  text: string
 }
 
 class NapwayButton extends Component<Props> {
@@ -28,9 +27,9 @@ class NapwayButton extends Component<Props> {
             alert('clicked!')
           }}
         >
-          <h1 data-tip="Renting System currently in development!">
-            {this.props.text}
-          </h1>
+          <div data-tip="Renting System currently in development!">
+            {this.props.children}
+          </div>
         </button>
       </>
     )
